@@ -1,0 +1,254 @@
+.details-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow-y: auto;
+    background: rgba(24, 32, 56, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.details-modal {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 850px;
+    overflow: hidden;
+    border: 1px solid #e8eaf2;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 24px 80px rgba(26, 35, 70, 0.2);
+}
+
+.details-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e5e7f0;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #454b60;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.details-preview {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 380px;
+    padding: 28px;
+    background: linear-gradient(145deg, #f0efff, #f7f8fc);
+}
+
+.details-preview-label {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    padding: 7px 11px;
+    border: 1px solid #e2dfff;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #5146e5;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.details-art {
+    width: 100%;
+    max-width: 340px;
+    padding: 12px;
+    border: 1px solid #e1e4ef;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(47, 52, 100, 0.12);
+    transform: rotate(-2deg);
+}
+
+.details-window-top {
+    display: flex;
+    gap: 5px;
+    padding: 9px;
+    border-bottom: 1px solid #eceef5;
+}
+
+.details-window-top i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d7d9e5;
+}
+
+.details-window-content {
+    display: flex;
+    gap: 12px;
+    min-height: 190px;
+    padding-top: 12px;
+}
+
+.details-sidebar {
+    width: 24%;
+    border-radius: 5px;
+    background: #f0efff;
+}
+
+.details-main {
+    flex: 1;
+    padding: 8px 4px;
+}
+
+.details-heading-line {
+    width: 65%;
+    height: 12px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    background: #5146e5;
+}
+
+.details-text-line {
+    width: 90%;
+    height: 6px;
+    margin-bottom: 7px;
+    border-radius: 4px;
+    background: #e7e9f2;
+}
+
+.details-text-line.short {
+    width: 55%;
+}
+
+.details-block-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.details-block-row i {
+    flex: 1;
+    height: 70px;
+    border: 1px solid #e5e7f0;
+    border-radius: 6px;
+    background: #f8f8fc;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 42px 32px;
+}
+
+.details-category {
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #f0efff;
+    color: #5146e5;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.details-content h2 {
+    margin: 18px 0 12px;
+    color: #20243a;
+    font-size: 29px;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.details-description {
+    margin: 0;
+    color: #747b90;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.details-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 24px 0;
+    padding: 16px 0;
+    border-top: 1px solid #eceef5;
+    border-bottom: 1px solid #eceef5;
+    color: #747b90;
+    font-size: 12px;
+}
+
+.details-favorite,
+.details-done {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #5146e5;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.details-favorite {
+    background: #5146e5;
+    color: #ffffff;
+}
+
+.details-favorite:hover {
+    background: #4035cc;
+}
+
+.details-favorite.is-favorite {
+    border-color: #ffd7e0;
+    background: #fff0f3;
+    color: #d9365b;
+}
+
+.details-done {
+    margin-top: 10px;
+    border-color: #e1e4ef;
+    background: #ffffff;
+    color: #454b60;
+}
+
+.details-done:hover {
+    background: #f7f8fc;
+}
+
+@media (max-width: 650px) {
+    .details-backdrop {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    .details-modal {
+        grid-template-columns: 1fr;
+        margin: auto 0;
+    }
+
+    .details-preview {
+        min-height: 240px;
+        padding: 24px;
+    }
+
+    .details-window-content {
+        min-height: 120px;
+    }
+
+    .details-block-row i {
+        height: 45px;
+    }
+
+    .details-content {
+        padding: 28px 24px;
+    }
+
+    .details-content h2 {
+        font-size: 24px;
+    }
+}
